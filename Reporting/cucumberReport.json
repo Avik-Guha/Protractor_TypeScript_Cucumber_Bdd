@@ -1,0 +1,114 @@
+[
+  {
+    "description": "    Feature To Handle Textbox",
+    "elements": [
+      {
+        "description": "",
+        "id": "handle-textbox;enter-text-in-textbox",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Enter Text In Textbox",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "Launch Application",
+            "match": {
+              "location": "..\\StepDefinition\\LaunchApplication_SD.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7673000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "User enters First Name in Registration page",
+            "match": {
+              "location": "..\\StepDefinition\\Registration_SD.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Verify label in Name field",
+            "match": {
+              "location": "..\\StepDefinition\\Registration_SD.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 183000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "User enters Last Name in Registration page",
+            "match": {
+              "location": "..\\StepDefinition\\Registration_SD.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2218000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 13000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Feature_Handle_Textbox",
+            "line": 1
+          },
+          {
+            "name": "@Scenario_Enter_Text_In_Textbox",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "handle-textbox",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Handle Textbox",
+    "tags": [
+      {
+        "name": "@Feature_Handle_Textbox",
+        "line": 1
+      }
+    ],
+    "uri": "..\\..\\Features\\Handle_Textbox.feature"
+  }
+]

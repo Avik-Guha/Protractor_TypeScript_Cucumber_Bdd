@@ -1,0 +1,16 @@
+{
+	"cucumberautocomplete.steps": ["./StepDefinition/*.ts"],
+	"cucumberautocomplete.syncfeatures": true,
+	"cucumberautocomplete.strictGherkinCompletion": true,
+	"cucumberautocomplete.smartSnippets": true,
+	"cucumberautocomplete.stepsInvariants": true,
+	"cucumberautocomplete.onTypeFormat": true,
+	"editor.quickSuggestions": {
+		"comments": false,
+		"strings": true,
+		"other": true
+	},
+	"cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then)\\(",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true
+}

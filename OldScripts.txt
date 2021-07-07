@@ -1,0 +1,427 @@
+/****** Get the value
+    ***** Method to verify value in the field
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async checkValue(objectLocation: ElementFinder, valueToCheck: string) {
+        //const deferred = protractor.promise.defer();
+        await browser.wait(EC.visibilityOf(objectLocation), 60000);
+        await objectLocation.getText()
+            .then(async (value) => {
+                const textFromWebPage = value.toString();
+                await expect(textFromWebPage)
+                if (textFromWebPage == valueToCheck) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                console.log(valueToCheck + " --- Expected value");
+                console.log(textFromWebPage + " --- Value is displayed");
+            })
+
+        return await deferred.promise;
+    }
+
+
+/***************************************************/
+
+import { browser, ElementFinder, protractor, ElementArrayFinder, element, by, promise } from "protractor";
+//import { Driver } from "selenium-webdriver/chrome";
+
+
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised);
+const expect = chai.expect;
+
+const deferred = protractor.promise.defer();
+
+var EC = protractor.ExpectedConditions;
+
+
+
+export class CommonFunctions_MT {
+
+    //                                             \\
+    //************ Operations on Web Browser ***********\\
+    //                                                 \\
+
+
+    /****** Launch URL
+    ***** Method to to launch an url
+    **** @Creator Avik Guha
+    ***/
+    public async openURL(url: string) {
+        await browser.get(url);
+    }
+
+
+
+    //                                             \\
+    //************ Operations on Web Page ***********\\
+    //                                                 \\
+
+
+    /****** close opened tabs, except 1st tab
+    ***** Method to close opened tabs, except 1st tab
+    **** @Creator Avik Guha
+    ***/
+    closeOpenedTabs() {
+        browser.getAllWindowHandles().then(function (handles) {
+            for (let i = 1; i < handles.length; i++) {
+                if (handles[i]) {
+                    console.log('** Closing tab: ' + i + ' **');
+                    browser.driver.switchTo().window(handles[i]);
+                    browser.driver.close();
+                }
+            }
+            browser.driver.switchTo().window(handles[0]);
+        });
+    }
+
+
+    /****** Get Web Title
+    ***** Method to verify Title of the page
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async checkTitle(valueToCheck: string) {
+        //const deferred = protractor.promise.defer();
+        await browser.getTitle()
+            .then(async (webpagetitle) => {
+                const title = webpagetitle.toString();
+                if (title === valueToCheck) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                // console.log(webpagetitle + "--- Webpage Title");
+            })
+
+        return await deferred.promise;
+    }
+
+
+    /****** Get Page URL
+    ***** Method to verify URL of the page
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async checkUrl(valueToCheck: string) {
+        //const deferred = protractor.promise.defer();
+        await browser.getCurrentUrl()
+            .then(async (webpageUrl) => {
+                const url = webpageUrl.toString();
+                if (url === valueToCheck) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                // console.log(webpagetitle + "--- Webpage Title");
+            })
+
+        return await deferred.promise;
+    }
+
+
+
+    //                                                                \\
+    //************ Operations on Editable/Non-Editable Box ************\\
+    //                                                                  \\
+
+
+    /****** Enter a Value
+    ***** Method to enter a value in text box
+    **** @Creator Avik Guha
+    ***/
+    public async enterValue(textboxLocation: ElementFinder, valueToEnter: string) {
+        await textboxLocation.sendKeys(valueToEnter);
+    }
+
+
+    /****** Clear the Value
+    ***** Method to clear the value in text box
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async clearValue(textboxLocation: ElementFinder) {
+        await textboxLocation.clear();
+        //const deferred = protractor.promise.defer();
+        await textboxLocation.getText()
+            .then(async (locatorValue) => {
+                const value = locatorValue.toString();
+                if (value === '') {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                console.log(locatorValue + " --- Value is displayed");
+            })
+
+        return await deferred.promise;
+    }
+
+
+    /****** Check enabled status (commen for any element)
+    ***** Method to verify if the field is enabled
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async isEnabled(elementLocation: ElementFinder) {
+        //const deferred = protractor.promise.defer();
+        await browser.wait(EC.visibilityOf(elementLocation), 60000);
+        await elementLocation.isEnabled()
+            .then(async (value) => {
+                if (value === true) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                //console.log(locatorValue + " --- Value is displayed");
+            })
+
+        return await deferred.promise;
+    }
+
+
+    /****** Check existance (commen for any element)
+    ***** Method to verify if the element is displayed
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async isDisplayed(elementLocation: ElementFinder) {
+        //const deferred = protractor.promise.defer();
+        await browser.wait(EC.visibilityOf(elementLocation), 60000);
+        await elementLocation.isDisplayed()
+            .then(async (value) => {
+                if (value === true) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                //console.log(locatorValue + " --- Value is displayed");
+            })
+
+        return await deferred.promise;
+    }
+
+
+    /****** Get the value
+    ***** Method to verify value in the field
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+   public async checkValue(objectLocation: ElementFinder, valueToCheck: string) {
+
+    await browser.wait(EC.visibilityOf(objectLocation), 60000);
+    await expect(objectLocation.getText()).to.eventually.equal(valueToCheck);
+
+}
+
+    /****** Get the Length
+    ***** Method to verify length of the edit box
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async checkLength(objectLocation: ElementFinder, valueToCheck: string) {
+        //const deferred = protractor.promise.defer();
+        await browser.wait(EC.visibilityOf(objectLocation), 60000);
+        await objectLocation.getAttribute('maxlength')
+            .then(async (lengthValue) => {
+                const length = lengthValue;
+                if (length.toString() === valueToCheck) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                console.log(length + "--- Length Value is displayed");
+            })
+
+        return await deferred.promise;
+    }
+
+
+
+    //                                           \\
+    //************ Operations on Link ************\\
+    //                                             \\
+
+
+
+    /****** Click (common for all clickable element)
+    ***** Method to click on link, button, drop-down, check-box, radio button
+    **** @Creator Avik Guha
+    **/
+    public async click(elementLocation: ElementFinder) {
+
+        await browser.wait(EC.visibilityOf(elementLocation), 60000);
+        await elementLocation.click();
+    }
+
+
+
+    //                                           \\
+    //************ Operations on Checkbox ********\\
+    //                                             \\
+
+
+
+    /****** Selected (common for all selectable element)
+    ***** Method to verify if the Radio Button is Selected or not for Checkbox, Radio buttons etc.
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+    public async isSelected(elementLocation: ElementFinder) {
+        //const deferred = protractor.promise.defer();
+        await browser.wait(EC.visibilityOf(elementLocation), 60000);
+        await elementLocation.isSelected()
+            .then(async (value) => {
+                if (value === true) {
+                    await deferred.fulfill(true);
+                } else {
+                    await deferred.fulfill(false);
+                }
+                //console.log(locatorValue + " --- Value is displayed");
+            })
+
+        return await deferred.promise;
+    }
+
+
+
+
+
+
+
+
+
+
+    /****** Method to verify if the object is displayed on the page
+    ****** @author {Avik Guha}
+    **** @returns {Promise<boolean>}
+    **/
+    /*public async isDisplayed(objectLocator: ElementFinder) {
+        const deferred = protractor.promise.defer();
+        await deferred.fulfill(objectLocator.isDisplayed());
+        return await deferred.promise;
+    }*/
+
+    /******* Method to verify drop down value in the page *******/
+    /****** Creator: {Avik Guha} ******/
+    public async checkDropDownValue(dropdownLocation: ElementFinder | ElementArrayFinder, dropdownValues: ElementFinder | ElementArrayFinder, valueToCheck: string) {
+        const deferred = protractor.promise.defer();
+
+        await dropdownLocation.click();
+        /*await browser.sleep(3000);
+        await browser.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
+        await browser.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
+        await browser.sleep(6000);*/
+
+        let match: string;
+
+        await browser.findElements(dropdownValues).then(async (items: any) => {
+            for (var i = 0; i < items.length; i++) {
+                console.log(i + " ---Loop number"); // print output
+                let value: string = items[i].toString();
+                if (i > 0) {
+                    await browser.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
+                    await browser.sleep(3000);
+                }
+                if (value === valueToCheck) {
+                    await browser.actions().sendKeys(protractor.Key.ENTER).perform();
+                    console.log(value + " ---Value displayed"); // print output
+                    await match == "Success"
+                }
+                else {
+                    await match == "Fail"
+                }
+            }
+
+            if (match === "Success") {
+                await deferred.fulfill(true);
+            } else {
+                await deferred.fulfill(false);
+            }
+
+        })
+
+        return await deferred.promise;
+
+    }
+
+    /******* Method to verify drop down value in the page *******/
+    /****** Creator: {Avik Guha} ******/
+    public async testDropDownValue(dropdownLocation: ElementFinder | ElementArrayFinder, dropdownValues: ElementFinder | ElementArrayFinder, valueToMatch: string) {
+        //const deferred = protractor.promise.defer();
+
+        await dropdownLocation.click();
+
+        console.log("Value to match is: " + valueToMatch);
+
+        /*await element.all(by.css(dropdownValues)).getText().then((text) =>{
+            console.log("Dropdown values are: " + text);
+        });*/
+
+        let values = [];
+
+        await dropdownLocation.getText().then((text: string) => {
+            console.log("Dropdown values are: " + text);
+            //await values == text
+
+            values.push(text.toString());
+
+
+            for (var i = 0; i <= 0; i++) {
+                console.log("Loop number: " + i + "  Dropdown value is: " + values[i]);
+
+                if (values[i] === valueToMatch) {
+                    browser.actions().sendKeys(protractor.Key.ENTER).perform();
+                    browser.sleep(3000);
+                    break;
+                }
+                else {
+                    browser.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
+                    browser.sleep(1000);
+                }
+            }
+
+        });
+
+        //return await deferred.promise;
+
+    }
+
+
+    /****** Check existance (commen for any element)
+    ***** Method to verify if the element is not displayed
+    **** @Creator Avik Guha
+    *** @returns {Promise<boolean>}
+    **/
+   public async isNotDisplayed(elementLocation: ElementFinder) {
+
+    //await browser.sleep(3000);
+    //await expect.fail(elementLocation.isDisplayed());
+
+    await browser.wait(EC.visibilityOf(elementLocation), 3000)
+    .then(async function (isVisible) {
+            if (isVisible) {
+                // element is visible
+                console.log("Element is displayed");
+                await elementLocation.click();
+                await deferred.fulfill(true);
+            } else {
+                // element is not visible
+                console.log("Element is not available");
+                await deferred.fulfill(true);
+            }
+            }).catch(async function(err){
+            console.log(" --- Element is not found, Exception error caught");
+            await deferred.fulfill(true);
+            });
+
+            return await deferred.promise;
+            
+}
+    
+
+}
