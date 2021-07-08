@@ -5,7 +5,7 @@ const Locators = {
 	First_Name_Textbox: {
 		name: 'First Name Textbox - value',
 		type: IdentificationType[IdentificationType.Css],
-		value: '#basicBootstrapForm > div:nth-child(1) > div:nth-child(200) > input',
+		value: '#basicBootstrapForm > div:nth-child(1) > div:nth-child(2) > input',
 	},
 	Last_Name_Textbox: {
 		name: 'Last Name Textbox - value',
