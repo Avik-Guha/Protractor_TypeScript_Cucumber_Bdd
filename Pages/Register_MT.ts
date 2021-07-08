@@ -13,19 +13,21 @@ export class Register_MT {
 	/**
 	 * This method is used to enter First Name
 	 * Read data from Json file
+	 * using Utility method
 	 * @author Avik Guha
 	 */
 	public async enter_First_Name() {
-		this.json_Reader.read_Json_Data(
-			this.register_json_name,
-			'First Name',
-			(result) => {
-				console.log('Return value is : ' + result)
-				this.commonFunctions_MT.enterValue(
-					this.register_LO.First_Name_Textbox,
-					result
-				)
-			}
+		let value: string | number
+
+		await this.json_Reader
+			.read_Json_Data(this.register_json_name, 'First Name')
+			.then((x) => {
+				value = x
+			})
+
+		await this.commonFunctions_MT.enterValue(
+			this.register_LO.First_Name_Textbox,
+			value
 		)
 	}
 

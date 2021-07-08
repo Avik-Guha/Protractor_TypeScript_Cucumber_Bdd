@@ -47,7 +47,7 @@ class Register_MT {
      */
     enter_First_Name() {
         return __awaiter(this, void 0, void 0, function* () {
-            this.json_Reader.read_Json_Data(this.register_json_name, 'First Name', (result) => {
+            yield this.json_Reader.read_Json_Data(this.register_json_name, 'First Name', (result) => {
                 console.log('Return value is : ' + result);
                 this.commonFunctions_MT.enterValue(this.register_LO.First_Name_Textbox, result);
             });

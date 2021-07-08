@@ -33,7 +33,9 @@ Given('Read First Name', async () => {
 	await commonFunctions_MT.launchURL(url),
 		'--- Launch application home page ---'
 
-	json_Reader.read_Json_Data('Register_Details', 'First Name', (result) => {
-		console.log('Return value is : ' + result)
-	})
+	json_Reader
+		.read_Json_Data('Register_Details', 'First Name')
+		.then((result) => {
+			console.log('Return value is : ' + result)
+		})
 })
