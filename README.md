@@ -36,9 +36,9 @@ Logs --> execution logs is generated here by log4js
 
 Pages --> Contains Business Components and Object Locator files (, )
 
-      _\_BC.ts --> contains methods
+      *_BC.ts --> contains methods
 
-      _\_OB.ts --> contains locators
+      *_OB.ts --> contains locators
 
 Reporting --> HTML report is generated using cucumber-html-reporter
 
@@ -58,7 +58,7 @@ Utility --> Contains custom utilities developed in the framework and are used gl
 
       CommonFunctions --> contains custom methods to perform protractor checks/actions
 
-      Identification --> contains identification type files (used by \*\_OB.ts files for storing/handling locators)
+      Identification --> contains identification type files (used by *_OB.ts files for storing/handling locators)
 
       Json_Reader --> utility built to read data from Json file
 
