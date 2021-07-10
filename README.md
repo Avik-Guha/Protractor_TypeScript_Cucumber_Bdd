@@ -34,7 +34,7 @@ Hooks --> contains hooks file
 
 Logs --> execution logs is generated here by log4js
 
-Pages --> Contains Business Components and Object Locator files (, )
+Pages --> Contains Business Components and Object Locator files
 
       *_BC.ts --> contains methods
 
