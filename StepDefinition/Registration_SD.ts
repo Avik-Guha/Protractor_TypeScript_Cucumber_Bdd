@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber'
 import { CommonFunctions_MT } from '../Utility/CommonFunctions/CommonFunctions_MT'
 import { protractor, browser } from 'protractor'
-import { Register_MT } from '../Pages/Register_MT'
+import { Register_MT } from '../Pages/Register_BC'
 
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')

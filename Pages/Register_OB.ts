@@ -1,5 +1,5 @@
 import { BasePage } from '../Utility/Identification/BasePage_EL'
-import { IdentificationType } from '../Utility/Identification//BasePage_EN'
+import { IdentificationType } from '../Utility/Identification/BasePage_EN'
 
 const Locators = {
 	First_Name_Textbox: {

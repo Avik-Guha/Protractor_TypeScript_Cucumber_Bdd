@@ -1,4 +1,4 @@
-import { Register_LO } from './Register_LO'
+import { Register_LO } from './Register_OB'
 import { CommonFunctions_MT } from '../Utility/CommonFunctions/CommonFunctions_MT'
 import { Json_Reader } from '../Utility/Json_Reader'
 import * as register from '../Resources/TestData/Register_Details.json'
