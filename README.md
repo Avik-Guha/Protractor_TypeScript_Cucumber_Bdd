@@ -2,23 +2,18 @@
 
 This is an Web Automation Testing framework using:
 
-Protractor
-
-TypeScript
-
-Cucumber BDD
-
-log4js
-
-cucumber-html-reporter
+     Protractor
+     TypeScript
+     Cucumber BDD
+     log4js
+     cucumber-html-reporter
 
 ## Installation
 
 ### Prerequisite:
 
-Node.js
-
-Editor (preferred - Visual Studio Code )
+     Node.js
+     Editor (preferred - Visual Studio Code)
 
 ### Extensions in VS Code:
 
