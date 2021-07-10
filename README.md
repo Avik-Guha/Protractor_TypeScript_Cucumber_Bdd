@@ -1,26 +1,35 @@
 # Protractor_TypeScript_Cucumber_Bdd
 
 This is an Web Automation Testing framework using:
+
 Protractor
+
 TypeScript
+
 Cucumber BDD
+
 log4js
+
 cucumber-html-reporter
 
 ## Installation
 
-Prerequisite:
+### Prerequisite:
+
 Node.js
+
 Editor (preferred - Visual Studio Code )
-Extensions in VS Code:
-vscode-icons
-Prettier - Code formatter
-Output Colorizer
-Visual Studio IntelliCode
-npm
-npm Intellisense
-Cucumber (Gherkin) Full Support
-ES7 React/Redux/GraphQL/React-Native snippets
+
+### Extensions in VS Code:
+
+     vscode-icons
+     Prettier - Code formatter
+     Output Colorizer
+     Visual Studio IntelliCode
+     npm
+     npm Intellisense
+     Cucumber (Gherkin) Full Support
+     ES7 React/Redux/GraphQL/React-Native snippets
 
 All set!!! Just download the Project folder...
 
