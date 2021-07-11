@@ -7,6 +7,7 @@ This is an Web Automation Testing framework using:
      Cucumber BDD
      log4js
      cucumber-html-reporter
+     Page Object Model
 
 ## Installation
 
@@ -91,14 +92,14 @@ All set!!! Just download the Project folder...
 
 ## Contributing
 
-   Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-   Please make sure to update tests as appropriate.
+Please make sure to update tests as appropriate.
 
 ## Contributors
 
-   Avik Guha
+Avik Guha
 
 ## License
 
-   Licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE).
